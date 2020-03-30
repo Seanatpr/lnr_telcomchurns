@@ -26,4 +26,9 @@ setwd(DIR_PRJBASE)
 # Files --------------------------------------------------------------
 FILE_DATA_RAW <- file.path(DIR_INPUT, 'churn.csv')
 
-FILE_DATA_CHECKPOINT_0 <- file.path(DIR_MIDPUT, 'churn_0.Rda')
+
+.FILE_PREFIX_DATA_CHECKPOINT <- 'workingdata_checkpoint'
+FILE_DATA_CHECKPOINT <- function(aN){
+    return(file.path(DIR_MIDPUT,
+                     paste0(.FILE_PREFIX_DATA_CHECKPOINT, aN, '.Rda')))
+}

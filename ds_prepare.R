@@ -21,10 +21,14 @@ df_working %>%
     df_working
 
 glimpse(df_working)
-save(df_working, file = FILE_DATA_CHECKPOINT_0)
-# load(FILE_DATA_CHECKPOINT_0)
 
-fct_relevel
+
+# * data check point 0 ----------------------------------------------------
+DATA_CHECKPOINT <- 0
+save(df_working, file = FILE_DATA_CHECKPOINT(DATA_CHECKPOINT))
+# load(FILE_DATA_CHECKPOINT(DATA_CHECKPOINT))
+
+
 
 # EDA ---------------------------------------------------------------------
 #Hmisc::describe(df_working)
@@ -68,6 +72,12 @@ glimpse(df_working)
 df_working %>%
     select(-ID) ->
     df_working
+
+
+# * data check point 1 ----------------------------------------------------
+DATA_CHECKPOINT <- 1
+save(df_working, file = FILE_DATA_CHECKPOINT(DATA_CHECKPOINT))
+# load(FILE_DATA_CHECKPOINT(DATA_CHECKPOINT))
 
 
 # Plot churn vs CUSCALL ---------------------------------------------------
@@ -162,7 +172,7 @@ PlotXTabs2(df_working,
 
 PlotXTabs2(df_working,
            INTPLAN,  CHURN,
-          bf.display = "sensible")
+           bf.display = "sensible")
 
 df_working %>%
     filter(INTPLAN == "No") %>%
