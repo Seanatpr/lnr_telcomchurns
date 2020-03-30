@@ -1,0 +1,8 @@
+# directories
+project:
+    root_dir: C:/Users/YourName/YourProjectFolder
+    script_dir: "."
+    input_dir: input
+    midput_dir: midput
+    output_dir: output
+    docput_idr: docput
