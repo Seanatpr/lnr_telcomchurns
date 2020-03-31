@@ -32,7 +32,9 @@ save(df_working, file = FILE_DATA_CHECKPOINT(DATA_CHECKPOINT))
 
 # EDA ---------------------------------------------------------------------
 #Hmisc::describe(df_working)
-#DataExplorer::create_report(df_working)
+DataExplorer::create_report(df_working,
+                            output_dir = DIR_DOCPUT,
+                            output_file = FILE_DATA_PROFILING_REPORT)
 
 
 
